@@ -1,9 +1,37 @@
-import { createContext } from 'react';
-
+import { createContext, useState } from 'react';
+import * as authApi from '../apis/auth-api';
+import {
+  getAccessToken,
+  removeAccessToken,
+  setAccessToken,
+} from '../utils/local-storage';
 export const AuthContext = createContext();
 
 export default function AuthContextProvider({ children }) {
-  return <AuthContext.Provider value={''}>{children}</AuthContext.Provider>;
+  const [authenticatedUser, setAuthenticatedUser] = useState(
+    getAccessToken() ? true : null
+  );
+
+  // set state for do sth to say that u are login
+  const login = async (email, password) => {
+    // part to login form
+    const res = await authApi.login({ email, password }); // sent req of the (email and password) to this
+    // res is for to get the login
+    // => check in the login box in handleSubmit to catch error
+    setAccessToken(res.data.accessToken);
+    setAuthenticatedUser(true);
+  };
+
+  const logout = () => {
+    removeAccessToken();
+    setAuthenticatedUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ authenticatedUser, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 // การส่งค่าไปใน context object value={}

@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom';
+import RegisterContainer from '../features/auth/RegisterContainer';
+import LoginButton from '../features/auth/LoginButton';
+import Modal from '../components/Modal';
+import LoginBox from '../features/auth/LoginBox';
+import BookingGuestButton from '../features/auth/BookingGuestButton';
 
-export default function Apartment() {
+export default function ApartmentGuest() {
   return (
     <div>
       <div>
@@ -15,13 +19,13 @@ export default function Apartment() {
             <div className='bg-cyan-800 w-[300px] h-auto'>
               3<div className='bg-white h-[400px]'></div>
               <br />
-              <div className='flex-1 grid justify-items-center bg-red'>
-                <Link to='/booking'>
-                  <button className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'>
-                    Booking
-                  </button>
-                </Link>
-              </div>
+              {/* <div className='flex-1 grid justify-items-center bg-red'>
+                <button className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'>
+                  Booking
+                </button>
+                
+              </div> */}
+              <BookingGuestButton />
               <br />
               <div className='flex-1 grid justify-items-center bg-green'>
                 <button className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'>

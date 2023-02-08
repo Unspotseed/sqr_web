@@ -1,45 +1,9 @@
+import { Link } from 'react-router-dom';
+
 export default function MainPage() {
   return (
     <div>
       <div>
-        {/* top box */}
-        <div className=' bg-footer h-20 grid justify-items-stretch'>
-          <div className='flex h-20 '>
-            {/* <div className='bg-footer h-20'> */}
-            {/* logo sqr */}
-
-            <div className='flex  flex-1 bg-green w-[100px] items-center justify-center space-x-4'>
-              <div>
-                <h1 className='  bg-red font-Oswald'>SQR</h1>
-              </div>
-              <div className='bg-blue'>for search</div>
-            </div>
-
-            {/* name */}
-            <div className='flex flex-1 shrink-0 items-center justify-center'>
-              <div className=' flex  bg-green font-Kelly text-7xl'>
-                Square room
-              </div>
-            </div>
-
-            {/* button sign in and Login */}
-            <div className='flex-1 grid justify-items-stretch bg-white '>
-              <div className=' flex justify-self-center items-center justify-center w-9/12 bg-black'>
-                <div className='flex-1 grid justify-items-end bg-red'>
-                  <button className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'>
-                    Booking
-                  </button>
-                </div>
-                <div className='flex-1 grid justify-items-end bg-green'>
-                  <button className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'>
-                    SHT
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* body part */}
         {/* <div className='bg-bg h-[685px]'> */}
         <div
@@ -79,38 +43,40 @@ export default function MainPage() {
           {/* apartment card */}
           <div className='bg-blue grid justify-items-stretch h-[325px]'>
             <div className='flex justify-self-center justify-between w-11/12'>
-              <div className='w-[240px] h-[300px] bg-green'>
-                <div className='h-[150px] block bg-black'>
-                  <img
-                    src='https://images.pexels.com/photos/1124461/pexels-photo-1124461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-                    className='w-[240px] h-[150px]'
-                    alt='apartment'
-                  />
-                </div>
+              <Link to='/apartment'>
+                <div className='w-[240px] h-[300px] bg-green'>
+                  <div className='h-[150px] block bg-black'>
+                    <img
+                      src='https://images.pexels.com/photos/1124461/pexels-photo-1124461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+                      className='w-[240px] h-[150px]'
+                      alt='apartment'
+                    />
+                  </div>
 
-                <div className='ml-3'>
-                  <h1 className='text-center my-2 font-Oswald font-bold'>
-                    The Mont Tower
-                  </h1>
-                  <p className='font-Oswald font-semibold text-[12px]'>
-                    Room: 2 Rooms 1 Bath
-                  </p>
-                  <p className='font-Oswald font-semibold text-[12px]'>
-                    Unit: 150 sqr
-                  </p>
+                  <div className='ml-3'>
+                    <h1 className='text-center my-2 font-Oswald font-bold'>
+                      The Mont Tower
+                    </h1>
+                    <p className='font-Oswald font-semibold text-[12px]'>
+                      Room: 2 Rooms 1 Bath
+                    </p>
+                    <p className='font-Oswald font-semibold text-[12px]'>
+                      Unit: 150 sqr
+                    </p>
 
-                  <div className='flex mt-7 justify-between  bg-white'>
-                    <div className='font-Oswald font-semibold text-[16px]'>
-                      Price: 3000 THB
-                    </div>
-                    <div className='bg-red'>
-                      <button className='rounded-full w-[125px] h-[30px] bg-green font-Oswald text-[16px]'>
-                        Request a tour
-                      </button>
+                    <div className='flex mt-7 justify-between  bg-white'>
+                      <div className='font-Oswald font-semibold text-[16px]'>
+                        Price: 3000 THB
+                      </div>
+                      <div className='bg-red'>
+                        <button className='rounded-full w-[125px] h-[30px] bg-green font-Oswald text-[16px]'>
+                          Request a tour
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               <div className='w-[240px] h-[300px] bg-green'>
                 <div className='bg-fixed h-[150px] block bg-black '>

@@ -1,7 +1,10 @@
 import { useState } from 'react';
 // import * as Joi from 'joi';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import Input from '../../components/Input';
 import validateRegister from '../../validators/validateRegister';
+import * as authApi from '../../apis/auth-api';
 
 const initialInput = {
   firstName: '',
@@ -40,7 +43,7 @@ const validateRegister = input => {
 };
 */
 
-export default function RegisterBox() {
+export default function RegisterBox({ onClose }) {
   const [input, setInput] = useState(initialInput);
   // for onchange can keep the input in state
   const [error, setError] = useState({});
@@ -70,20 +73,31 @@ export default function RegisterBox() {
   };
   */
 
-  const handleSubmitForm = e => {
-    e.preventDefault();
-    // ตอนกด submit form ยกเลิก prevent default ของ form ก่อน
-    const result = validateRegister(input);
-    if (result) {
-      setError(result);
-      // เอา error เดิม มา merge รวมกับ error ใหม่
-    } else {
-      setError({});
-    }
-    // console.dir(result);
-    // to check where the error is
+  const handleSubmitForm = async e => {
+    try {
+      e.preventDefault();
+      // ตอนกด submit form ยกเลิก prevent default ของ form ก่อน
+      const result = validateRegister(input);
+      if (result) {
+        setError(result);
+        // เอา error เดิม มา merge รวมกับ error ใหม่
+      } else {
+        setError({});
+        // console.dir(result);
+        // to check where the error is
 
-    // then register to server
+        // then register to server
+        // axios.post("/auth/register" ,input) // version 1
+        await authApi.register(input); // is async function
+        setInput(initialInput);
+        onClose();
+        toast.success('Success register');
+      }
+    } catch (err) {
+      // err.response.data // error from backend
+      // console.dir(err.response.data);
+      toast.error(err.response?.data.Message);
+    }
   };
 
   return (
