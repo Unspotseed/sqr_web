@@ -1,4 +1,11 @@
+import { Link } from 'react-router-dom';
+import Bill from '../template/Bill';
+import PaymentOrder from '../template/PaymentOrder';
+import useRoom from '../hooks/useRoom';
+
 export default function PaymentPage() {
+  const { floor } = useRoom();
+
   return (
     <div>
       {' '}
@@ -7,8 +14,15 @@ export default function PaymentPage() {
 '
       >
         <div className='flex justify-between p-14'>
-          <div className='bg-red w-[350px] h-[500px]'>1</div>
-          <div className='bg-blue w-[350px] '>2</div>
+          <div className='bg-red w-[350px] h-[500px]'>
+            <Link to={'/booking'}>
+              <button className='bg-green'>Back</button>
+            </Link>
+            <PaymentOrder floor={floor} />
+          </div>
+          <div className='bg-blue w-[350px] '>
+            <Bill />
+          </div>
           <div className='bg-cyan-800 w-[300px] h-auto'>
             3<div className='bg-white h-[400px]'></div>
             <br />

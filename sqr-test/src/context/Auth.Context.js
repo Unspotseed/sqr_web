@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import * as authApi from '../apis/auth-api';
 import {
   getAccessToken,
@@ -11,6 +11,20 @@ export default function AuthContextProvider({ children }) {
   const [authenticatedUser, setAuthenticatedUser] = useState(
     getAccessToken() ? true : null
   );
+
+  // const [selectRoom, setSelectRoom] = useState([]);
+
+  useEffect(() => {
+    const fetchAuthUser = async () => {
+      try {
+        const res = await authApi.getMe();
+        setAuthenticatedUser(res.data.user);
+      } catch (err) {
+        removeAccessToken();
+      }
+    };
+    fetchAuthUser(); // สามารถเอาค่า user ไปใส่ได้แล้ว
+  }, []);
 
   // set state for do sth to say that u are login
   const login = async (email, password) => {
