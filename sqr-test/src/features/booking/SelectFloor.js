@@ -11,7 +11,7 @@ export default function SelectFloor({
   // const [floorStatus, setFloorStatus] = useState([]);
 
   // setFloorStatus = floorSth.filter(room => room.status === 'AVAILABLE').length;
-
+  // console.log(roomSql.filter(room => room.floor));
   useEffect(() => {
     // const countStatus = roomSql.reduce((acc, item, i) => {
     //   if (item.status === 'AVAILABLE') {

@@ -1,14 +1,28 @@
-import useRoom from '../hooks/useRoom';
+import { useState, useRef, useEffect } from 'react';
+import useRoom from '../../hooks/useRoom';
+import DropdownChange from './DorpdownChange';
 
 export default function Bill() {
+  const [open, setOpen] = useState(false);
+  const dropdownE = useRef();
+  useEffect(() => {
+    const handleClickOutside = e => {
+      if (!dropdownE.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   const { selectRoom } = useRoom();
   return (
     <>
       <div className='bg-stone-700'>
         <div className='flex justify-between mb-10'>
           <h1>Room : {selectRoom}</h1>
-          <div>
-            <h3>Change</h3>
+          <div ref={dropdownE}>
+            <button onClick={() => setOpen(!open)}>Change</button>
+            <DropdownChange open={open} />
           </div>
         </div>
         <div className='my-5'>Price :</div>
