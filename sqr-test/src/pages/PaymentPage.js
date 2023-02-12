@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import Bill from '../features/payment/Bill';
-import PaymentOrder from '../template/PaymentOrder';
+import PaymentOrder from '../features/payment/PaymentOrder';
 import useRoom from '../hooks/useRoom';
+import useAddOn from '../hooks/useAddOn';
 
 export default function PaymentPage() {
   const { floor, roomSql, setFloor } = useRoom();
+  const { addOnSql, setAddOnShow, addOnShow } = useAddOn();
 
   return (
     <div>
@@ -18,7 +20,14 @@ export default function PaymentPage() {
             <Link to={'/booking'}>
               <button className='bg-green'>Back</button>
             </Link>
-            <PaymentOrder floor={floor} roomSql={roomSql} setFloor={setFloor} />
+            <PaymentOrder
+              floor={floor}
+              roomSql={roomSql}
+              setFloor={setFloor}
+              addOnSql={addOnSql}
+              setAddOnShow={setAddOnShow}
+              addOnShow={addOnShow}
+            />
           </div>
           <div className='bg-blue w-[350px] '>
             <Bill />

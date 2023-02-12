@@ -63,7 +63,7 @@ export default function SelectFloor({
     setRoomFloor(sortAllFloor);
 
     // setRoomFloor(sortAllFloor);
-  }, [roomSql]);
+  }, [setRoomFloor, roomSql]);
 
   const handleOnclick = floor => {
     setFloor(floor);

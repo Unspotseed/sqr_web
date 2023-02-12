@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { RoomContext } from '../context/RoomContextProvider';
 
-export default function useAuth() {
+export default function useRoom() {
   return useContext(RoomContext);
 }
 

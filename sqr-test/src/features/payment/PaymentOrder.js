@@ -1,10 +1,19 @@
 import { useEffect, useState, useRef } from 'react';
 
-export default function PaymentOrder({ floor, roomSql, setFloor }) {
+export default function PaymentOrder({
+  floor,
+  roomSql,
+  setFloor,
+  addOnSql,
+  setAddOnShow,
+  addOnShow,
+}) {
   const [open, setOpen] = useState(false);
   const dropdownE = useRef();
   const [changeFloor, setChangeFloor] = useState([]);
   useEffect(() => {
+    setAddOnShow(addOnSql);
+
     const showFloor = roomSql.reduce((acc, item) => {
       let idx = acc.findIndex(el => el.floor === item.floor);
       if (idx === -1) {
@@ -24,11 +33,12 @@ export default function PaymentOrder({ floor, roomSql, setFloor }) {
         setOpen(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [roomSql, addOnSql, setAddOnShow]);
 
-  const handleOnClickFloor = floor => [setFloor(floor)];
+  const handleOnClickFloor = floor => setFloor(floor);
 
   return (
     <>
@@ -66,18 +76,12 @@ export default function PaymentOrder({ floor, roomSql, setFloor }) {
         <div>
           <div>Add-on</div>
           <div className='bg-purple-400'>
-            <div className='flex justify-between'>
-              <h1>Air conditioner</h1> <h1>200+</h1>
-            </div>
-            <div className='flex justify-between'>
-              <h1>Air conditioner</h1> <h1>200+</h1>
-            </div>
-            <div className='flex justify-between'>
-              <h1>Air conditioner</h1> <h1>200+</h1>
-            </div>
-            <div className='flex justify-between'>
-              <h1>Air conditioner</h1> <h1>200+</h1>
-            </div>
+            {addOnShow.map(el => (
+              <div className='flex justify-between' key={el.addOn}>
+                <h1 key={el.addOn}> {el.addOn}</h1>{' '}
+                <h1 key={el.itemPrice}>{el.itemPrice}</h1>
+              </div>
+            ))}
           </div>
         </div>
       </div>

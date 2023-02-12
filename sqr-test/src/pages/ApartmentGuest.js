@@ -1,7 +1,7 @@
-import RegisterContainer from '../features/auth/RegisterContainer';
-import LoginButton from '../features/auth/LoginButton';
-import Modal from '../components/Modal';
-import LoginBox from '../features/auth/LoginBox';
+// import RegisterContainer from '../features/auth/RegisterContainer';
+// import LoginButton from '../features/auth/LoginButton';
+// import Modal from '../components/Modal';
+// import LoginBox from '../features/auth/LoginBox';
 import BookingGuestButton from '../features/auth/BookingGuestButton';
 
 export default function ApartmentGuest() {

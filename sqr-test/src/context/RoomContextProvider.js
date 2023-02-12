@@ -9,7 +9,7 @@ export default function RoomContextProvider({ children }) {
   useEffect(() => {
     const showRooms = async () => {
       const res = await bookingApi.getRoom();
-      console.log(res.data.rooms);
+      // console.log(res.data.rooms);
       setRoomSql(res.data.rooms);
     };
     showRooms();

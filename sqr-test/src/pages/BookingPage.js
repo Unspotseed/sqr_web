@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import RoomAvailable from '../features/booking/RoomAvailable';
 import RoomBox from '../features/booking/RoomBox';
 import SelectFloor from '../features/booking/SelectFloor';

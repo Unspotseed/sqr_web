@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import AuthContextProvider from './context/Auth.Context';
 import RoomContextProvider from './context/RoomContextProvider';
+import AddOnContextProvider from './context/AddOnContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthContextProvider>
       <RoomContextProvider>
-        <App />
+        <AddOnContextProvider>
+          <App />
+        </AddOnContextProvider>
       </RoomContextProvider>
     </AuthContextProvider>
   </React.StrictMode>
