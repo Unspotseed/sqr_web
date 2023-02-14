@@ -7,6 +7,8 @@ export default function PaymentOrder({
   addOnSql,
   setAddOnShow,
   addOnShow,
+  setAddTheAddOn,
+  addTheAddOn,
 }) {
   const [open, setOpen] = useState(false);
   const dropdownE = useRef();
@@ -40,6 +42,14 @@ export default function PaymentOrder({
 
   const handleOnClickFloor = floor => setFloor(floor);
 
+  const handleClickGetAddOn = addOn => {
+    const cloneAddOn = [...addTheAddOn];
+    cloneAddOn.push(addOn);
+    setAddTheAddOn(cloneAddOn);
+  };
+  // console.log(addOnSql);
+  // console.log(addOnShow, 'addOnShow');
+
   return (
     <>
       <div>
@@ -52,7 +62,7 @@ export default function PaymentOrder({
         <div className='bg-teal-800 my-10'>
           <h1>The Mont tower</h1>
           <div className='bg-lime-200' ref={dropdownE}>
-            <button onClick={() => setOpen(!open)}>{floor} th Floor</button>
+            <div onClick={() => setOpen(!open)}>{floor} th Floor</div>
             <div
               className={`relative  flex-col bg-stone-600  ${
                 open ? '' : 'hidden'
@@ -77,7 +87,11 @@ export default function PaymentOrder({
           <div>Add-on</div>
           <div className='bg-purple-400'>
             {addOnShow.map(el => (
-              <div className='flex justify-between' key={el.addOn}>
+              <div
+                className='flex justify-between mb-3 bg-white'
+                key={el.addOn}
+                onClick={() => handleClickGetAddOn(el)}
+              >
                 <h1 key={el.addOn}> {el.addOn}</h1>{' '}
                 <h1 key={el.itemPrice}>{el.itemPrice}</h1>
               </div>

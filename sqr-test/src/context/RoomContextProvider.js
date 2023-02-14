@@ -17,10 +17,18 @@ export default function RoomContextProvider({ children }) {
 
   const [selectRoom, setSelectRoom] = useState([]);
   const [floor, setFloor] = useState('');
-
+  const [roomPrice, setRoomPrice] = useState([]);
   return (
     <RoomContext.Provider
-      value={{ roomSql, selectRoom, setSelectRoom, floor, setFloor }}
+      value={{
+        roomSql,
+        selectRoom,
+        setSelectRoom,
+        floor,
+        setFloor,
+        setRoomPrice,
+        roomPrice,
+      }}
     >
       {children}
     </RoomContext.Provider>

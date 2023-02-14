@@ -63,7 +63,7 @@ export default function BookingPage() {
 */
 
   const selectRoomClick = selectRoom => {
-    console.log(selectRoom);
+    // console.log(selectRoom);
     if (selectRoom && selectRoom.length !== 0) {
       return navigate('/payment');
     }
