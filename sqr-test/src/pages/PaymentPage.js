@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Bill from '../features/payment/Bill';
 import PaymentOrder from '../features/payment/PaymentOrder';
 import useRoom from '../hooks/useRoom';
@@ -23,6 +24,8 @@ export function getBookingDates(durationInMonths) {
 }
 
 export default function PaymentPage() {
+  const navigate = useNavigate();
+
   const { floor, roomSql, setFloor, selectRoom } = useRoom();
   const {
     addOnSql,
@@ -33,7 +36,7 @@ export default function PaymentPage() {
     selectMonth,
 
     totalPriceA,
-    aaa,
+    // aaa,
     setAAA,
   } = useAddOn();
 
@@ -56,8 +59,18 @@ export default function PaymentPage() {
   }, [setAAA]);
   */
 
+  // const goToOrderStatus = () => {
+  //   // totalPriceA
+  //   // selectMonth
+  //   // selectRoom
+  //   // turn to boolean
+  //   if (!!totalPriceA && !!selectMonth && !!selectRoom) {
+  //     return navigate('/payment');
+  //   }
+  // };
+
   const date = getBookingDates(selectMonth);
-  console.log(date);
+  // console.log(date);
 
   const roomId = roomSql.find(room => room.room === selectRoom);
   // console.log(roomId.id, 'RoomId');
@@ -73,13 +86,18 @@ export default function PaymentPage() {
       timeEnd: date.endDate,
     });
     setAAA(res.data);
+
+    if (!!totalPriceA && !!selectMonth && !!selectRoom) {
+      return navigate('/orderStatus');
+    }
+
     // console.log(res.data);
     // console.log(selectRoom);
-    console.log(selectMonth);
+    // console.log(selectMonth);
   };
 
   // console.log(selectRoom, 'selectRoom');
-  console.log(aaa, 'aaaa');
+  // console.log(aaa, 'aaaa');
   return (
     <div>
       {' '}
