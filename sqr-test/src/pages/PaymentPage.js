@@ -6,6 +6,7 @@ import useRoom from '../hooks/useRoom';
 // import { useEffect } from 'react';
 import useAddOn from '../hooks/useAddOn';
 import * as paymentApi from '../apis/payment-api';
+import Owner from '../features/booking/Owner';
 
 export function getBookingDates(durationInMonths) {
   const today = new Date();
@@ -102,13 +103,15 @@ export default function PaymentPage() {
     <div>
       {' '}
       <div
-        className='bg-bg h-screen
+        className='bg-bg min-h-screen
 '
       >
         <div className='flex justify-between p-14'>
-          <div className='bg-red w-[350px] h-[500px]'>
+          <div className=' w-[350px] h-[500px]'>
             <Link to={'/booking'}>
-              <button className='bg-green'>Back</button>
+              <button className='text-white font-Oswald text-[16px]'>
+                Back
+              </button>
             </Link>
             <PaymentOrder
               floor={floor}
@@ -121,16 +124,18 @@ export default function PaymentPage() {
               addTheAddOn={addTheAddOn}
             />
           </div>
-          <div className='bg-blue w-[350px] '>
+          <div className=' w-[350px] '>
             <Bill />
           </div>
-          <div className='bg-cyan-800 w-[300px] h-auto'>
-            3<div className='bg-white h-[400px]'></div>
+          <div className=' w-[300px] h-auto'>
+            <div className='h-[400px]'>
+              <Owner />
+            </div>
             <br />
-            <div className='flex-1 grid justify-items-center bg-red'>
+            <div className='flex-1 grid justify-items-center '>
               <button
                 onClick={handleOnClickRoom}
-                className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'
+                className='font-Oswald font-semibold rounded-xl h-[40px] w-10/12 bg-lig2 text-white text-[24px] hover:opacity-60'
               >
                 Confirm
               </button>

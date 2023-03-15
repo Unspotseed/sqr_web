@@ -6,13 +6,17 @@ import {
 } from '../features/auth/RedirectIfAuthen';
 import AuthFooter from '../layouts/Authfooter';
 import GuestFooter from '../layouts/GuestFooter';
+// import Admin from '../pages/Admin';
+import AdminOrder from '../pages/AdminOrder';
 import ApartmentGuest from '../pages/ApartmentGuest';
 import Apartment from '../pages/ApartmentPage';
-import BookingPage from '../pages/BookingPage';
+// import BookingPage from '../pages/BookingPage';
 import MainG from '../pages/MainG';
-import MainPage from '../pages/MainPage';
-import OrderStatus from '../pages/OrderStatusPage';
+// import MainPage from '../pages/MainPage';
+// import OrderStatus from '../pages/OrderStatusPage';
 import PaymentPage from '../pages/PaymentPage';
+import BookingRole from './BookingRole';
+import OrderStatusRole from './OrderStatusRole';
 
 const router = createBrowserRouter([
   {
@@ -56,7 +60,7 @@ const router = createBrowserRouter([
             <MainPage />
           </ProtectedRoute>
           */
-          <MainPage />
+          <MainG />
         ),
       },
       {
@@ -66,7 +70,7 @@ const router = createBrowserRouter([
 
       {
         path: '/booking',
-        element: <BookingPage />,
+        element: <BookingRole />,
       },
       {
         path: '/payment',
@@ -74,7 +78,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/orderStatus',
-        element: <OrderStatus />,
+        element: <OrderStatusRole />,
+      },
+      {
+        path: '/example',
+        element: <AdminOrder />,
       },
     ],
   },

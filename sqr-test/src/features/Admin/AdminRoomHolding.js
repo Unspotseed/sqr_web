@@ -1,14 +1,17 @@
 import useRoom from '../../hooks/useRoom';
-
-export default function RoomAvailable({ floor }) {
+import { useState } from 'react';
+import AdminSelect from './AdminSelect';
+export default function AdminRoomHolding({ floor }) {
   const { roomSql, selectRoom, setSelectRoom } = useRoom();
-  const roomAvailable = roomSql.filter(
-    // room => room.status === 'AVAILABLE' && +room.floor === +floor
-    room => +room.floor === +floor && room.status === 'AVAILABLE'
+  const [option, setOption] = useState([]);
+  const [open, setOpen] = useState(false);
+  const roomStatus = roomSql.filter(
+    room => +room.floor === +floor && room.status === option
   );
 
   const handleClickSelectRoom = room => {
     setSelectRoom(room);
+
     // console.log(selectRoom);
   };
 
@@ -16,9 +19,13 @@ export default function RoomAvailable({ floor }) {
     <>
       <div>
         <div className=' h-[80px]'>
-          <h1 className='text-4xl font-semibold text-white font-Oswald'>
-            Room available
-          </h1>
+          <button
+            onClick={() => setOpen(!open)}
+            className='text-4xl font-semibold text-white font-Oswald'
+          >
+            Room {option}
+          </button>
+          <AdminSelect open={open} setOption={setOption} setOpen={setOpen} />
         </div>
         <div className=' mt-10'>
           <h2 className='text-3xl font-semibold text-white'>
@@ -27,7 +34,7 @@ export default function RoomAvailable({ floor }) {
           </h2>
         </div>
         <div className=' mt-10'>
-          {roomAvailable.map(el => (
+          {roomStatus.map(el => (
             <div key={el.room} className='flex justify-center'>
               <h1
                 key={el.room}

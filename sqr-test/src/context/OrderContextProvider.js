@@ -11,8 +11,6 @@ export default function OrderContextProvider({ children }) {
   const showOrder = async () => {
     const res = await orderApi.getOrder();
     setOrderSql(res.data.booking);
-    // console.log('-------- ', res.data.booking);
-    //   console.log(res.data.booking);
   };
   useEffect(() => {
     showOrder();
@@ -41,14 +39,8 @@ export default function OrderContextProvider({ children }) {
         orderSql,
         setOrderInfo,
         orderInfo,
-        showOrder,
         setOrderSql,
-        // file,
-        // setFile,
-        // ref,
-        // openFileInput,
-        // onChangeFileInput,
-        // onCancel,
+        showOrder,
       }}
     >
       {children}

@@ -7,15 +7,15 @@ export default function LoginButton() {
 
   return (
     <>
-      <div className='flex-1 grid justify-items-end bg-red'>
+      <div className='flex-1 grid justify-items-end'>
         <button
           onClick={() => setOpen(true)}
-          className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'
+          className='font-Oswald font-semibold rounded-full h-[40px] w-[125px] bg-white text-[24px] hover:opacity-60'
         >
           LOGIN
         </button>
       </div>
-      <Modal open={open} onClose={() => setOpen(false)} title={'Login'}>
+      <Modal open={open} onClose={() => setOpen(false)} title={'LOGIN'}>
         <LoginBox onClose={() => setOpen(false)} />
       </Modal>
     </>

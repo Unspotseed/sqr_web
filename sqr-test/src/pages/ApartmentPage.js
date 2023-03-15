@@ -12,7 +12,7 @@ export default function Apartment() {
           <div className='flex justify-between p-14'>
             <div className='bg-red w-[350px] h-[500px]'>1</div>
             <div className='bg-blue w-[350px] '>2</div>
-            <div className='bg-cyan-800 w-[300px] h-auto'>
+            <div className='bg-lig2 w-[300px] h-auto'>
               3<div className='bg-white h-[400px]'></div>
               <br />
               <div className='flex-1 grid justify-items-center bg-red'>

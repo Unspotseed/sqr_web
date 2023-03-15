@@ -17,11 +17,11 @@ export default function Dropdown() {
 
   return (
     <>
-      <div className='grid flex-1  justify-items-end bg-green'>
+      <div className='grid flex-1  justify-items-end'>
         <div ref={dropdownEl}>
           <button
             onClick={() => setOpen(!open)}
-            className=' font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'
+            className=' font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-gold hover:opacity-60 text-[24px]'
           >
             STH
           </button>

@@ -11,25 +11,27 @@ export default function GuestFooter() {
             {/* <div className='bg-footer h-20'> */}
             {/* logo sqr */}
 
-            <div className='flex  flex-1 bg-green w-[100px] items-center justify-center space-x-4'>
+            <div className='flex  flex-1  w-[100px] items-center justify-center space-x-4'>
               <Link to='/'>
                 <div>
-                  <h1 className='  bg-red font-Oswald'>SQR</h1>
+                  <h1 className=' text-white font-Oswald text-4xl font-semibold'>
+                    SQR
+                  </h1>
                 </div>
               </Link>
-              <div className='bg-blue'>for search</div>
+              {/* <div className='bg-blue'>for search</div> */}
             </div>
 
             {/* name */}
             <div className='flex flex-1 shrink-0 items-center justify-center'>
-              <div className=' flex  bg-green font-Kelly text-7xl'>
+              <div className=' flex   font-Kelly text-7xl text-wh'>
                 Square room
               </div>
             </div>
 
             {/* button sign in and Login */}
-            <div className='flex-1 grid justify-items-stretch bg-white '>
-              <div className=' flex justify-self-center items-center justify-center w-9/12 bg-black'>
+            <div className='flex-1 grid justify-items-stretch  '>
+              <div className=' flex justify-self-center items-center justify-center w-9/12 '>
                 <LoginButton />
                 <RegisterContainer />
               </div>

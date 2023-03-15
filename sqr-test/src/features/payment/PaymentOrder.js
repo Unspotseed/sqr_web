@@ -21,7 +21,7 @@ export default function PaymentOrder({
       if (idx === -1) {
         acc.push({ floor: item.floor });
       } else {
-        console.log('err');
+        // console.log('err');
       }
       return acc;
     }, []);
@@ -54,15 +54,23 @@ export default function PaymentOrder({
     <>
       <div>
         <div>
-          <div className='bg-yellow-400 h-[50px] border-b-4'>
-            <h1>PaymentOrder</h1>
+          <div className=' h-[50px] '>
+            <h1 className='text-white text-4xl font-Oswald font-semibold mt-5 flex justify-center bg-footer items-center h-20 '>
+              Payment Order
+            </h1>
           </div>
-          <h1> #0001</h1>
         </div>
-        <div className='bg-teal-800 my-10'>
-          <h1>The Mont tower</h1>
-          <div className='bg-lime-200' ref={dropdownE}>
-            <div onClick={() => setOpen(!open)}>{floor} th Floor</div>
+        <div className=' my-10'>
+          <h1 className='flex justify-center font-Oswald font-semibold text-4xl text-white py-10'>
+            The Mont tower
+          </h1>
+          <div className='' ref={dropdownE}>
+            <div
+              className='font-Oswald font-semibold text-2xl ml-7 text-white'
+              onClick={() => setOpen(!open)}
+            >
+              {floor} th Floor
+            </div>
             <div
               className={`relative  flex-col bg-stone-600  ${
                 open ? '' : 'hidden'
@@ -72,7 +80,8 @@ export default function PaymentOrder({
                 {changeFloor.map(el => (
                   <button
                     key={el.floor}
-                    className='bg-cyan-300 w-5'
+                    className='bg-gold text-white font-Oswald font-semibold
+                     w-5'
                     onClick={() => handleOnClickFloor(el.floor)}
                   >
                     {el.floor}
@@ -84,11 +93,15 @@ export default function PaymentOrder({
         </div>
 
         <div>
-          <div>Add-on</div>
-          <div className='bg-purple-400'>
+          <div className='flex justify-center items-center mb-10'>
+            <div className='w-8/12  text-white font-Oswald font-semibold flex justify-center text-2xl bg-footer h-14 items-center'>
+              Add-on
+            </div>
+          </div>
+          <div className=''>
             {addOnShow.map(el => (
               <div
-                className='flex justify-between mb-3 bg-white'
+                className='flex justify-between mb-3 font-semibold font-Oswald text-white text-2xl'
                 key={el.addOn}
                 onClick={() => handleClickGetAddOn(el)}
               >

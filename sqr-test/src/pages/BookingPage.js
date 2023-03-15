@@ -79,7 +79,7 @@ export default function BookingPage() {
 '
         >
           <div className='flex justify-between p-14'>
-            <div className='bg-red w-[350px] h-[500px]'>
+            <div className=' w-[350px] h-[500px]'>
               <SelectFloor
                 setRoomFloor={setRoomFloor}
                 roomFloor={roomFloor}
@@ -89,7 +89,7 @@ export default function BookingPage() {
                 setCurrentFloor2={setCurrentFloor2}
               />
             </div>
-            <div className='bg-blue w-auto '>
+            <div className=' w-auto '>
               <RoomBox
                 floor={floor}
                 currentFloor1={currentFloor1}
@@ -98,14 +98,14 @@ export default function BookingPage() {
                 // selectRoom={selectRoom}
               />
             </div>
-            <div className='bg-cyan-800 w-[300px] h-auto'>
+            <div className=' w-[300px] h-auto'>
               <RoomAvailable floor={floor} />
               <br />
-              <div className='flex-1 grid justify-items-center bg-red'>
+              <div className='flex-1 grid justify-items-center '>
                 {/* <Link to='/payment'> */}
                 <button
                   onClick={() => selectRoomClick(selectRoom)}
-                  className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'
+                  className='font-Oswald font-extrabold rounded-xl h-[40px] w-[250px] bg-lig2 text-white text-[24px] flex items-center justify-center hover:opacity-60'
                 >
                   Confirm Room
                 </button>

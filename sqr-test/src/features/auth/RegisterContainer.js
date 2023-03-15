@@ -7,15 +7,15 @@ export default function RegisterContainer() {
 
   return (
     <>
-      <div className='flex-1 grid justify-items-end bg-green'>
+      <div className='flex-1 grid justify-items-end '>
         <button
           onClick={() => setOpen(true)}
-          className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'
+          className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-gold text-[24px] text-black hover:opacity-60'
         >
-          SIGN IN
+          SIGN UP
         </button>
       </div>
-      <Modal open={open} onClose={() => setOpen(false)} title={'Sign Up'}>
+      <Modal open={open} onClose={() => setOpen(false)} title={'SIGN UP'}>
         <RegisterBox onClose={() => setOpen(false)} />
       </Modal>
 

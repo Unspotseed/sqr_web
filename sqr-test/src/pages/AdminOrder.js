@@ -2,25 +2,19 @@
 import { useEffect } from 'react';
 // import useRoom from '../hooks/useRoom';
 import useOrder from '../hooks/useOrder';
-import * as orderStatus from '../apis/orderStatus-api';
-import OrderInfo from '../features/payment/OrderInfo';
+import AdminInfo from '../features/Admin/AdminInfo';
 
-export default function OrderStatus() {
-  const { orderSql, setOrderInfo, showOrder } = useOrder();
-
+export default function AdminOrder() {
+  const { orderSql, setOrderInfo } = useOrder();
   // useEffect(() => {
-  //   setOrderInfo(orderSql);
-  //   // console.log(orderSql, '123');
-  // }, []);
+  //   showOrder();
+  // }, [showOrder]);
 
   useEffect(() => {
-    showOrder();
-  }, []);
+    setOrderInfo(orderSql);
+    // console.log(orderSql, '123');
+  }, [orderSql, setOrderInfo]);
 
-  // console.log(orderInfo, '-------------');
-  // const roomId = orderSql.find(room => room.roomId === roomSql.);
-
-  // const [inputOrderForm, setInputOrderForm] = useState([])
   return (
     <div>
       <div>
@@ -37,7 +31,7 @@ export default function OrderStatus() {
               </div>
               <div className='text-center text-3xl'>Apartment</div>
             </div>
-            <OrderInfo />
+            <AdminInfo />
 
             <div className='bg-bg w-[300px] '></div>
           </div>

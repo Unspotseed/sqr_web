@@ -104,11 +104,11 @@ export default function RegisterBox({ onClose }) {
     <>
       <form onSubmit={handleSubmitForm}>
         <div>
-          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px] '>
+          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]  text-white'>
             First name
           </h1>
           <div className='flex'>
-            <div className='bg-red border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
+            <div className='bg-wh border-4 border-zinc-900 h-[30px] w-[30px] text-center '>
               {' '}
               F
             </div>
@@ -128,11 +128,11 @@ export default function RegisterBox({ onClose }) {
         </div>
 
         <div className=''>
-          <h1 className=' mb-3 ml-3 font-Oswald font-bold text-[20px]'>
+          <h1 className=' mb-3 ml-3 font-Oswald font-bold text-[20px]  text-white'>
             Last Name
           </h1>
           <div className='flex'>
-            <div className='bg-red border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
+            <div className='bg-wh border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
               {' '}
               L
             </div>
@@ -152,9 +152,11 @@ export default function RegisterBox({ onClose }) {
         </div>
 
         <div className=' '>
-          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]'>Email</h1>
+          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]  text-white'>
+            Email
+          </h1>
           <div className='flex'>
-            <div className='bg-red border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
+            <div className='bg-wh border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
               {' '}
               E
             </div>
@@ -174,11 +176,11 @@ export default function RegisterBox({ onClose }) {
         </div>
 
         <div className=''>
-          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]'>
+          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]  text-white'>
             Password
           </h1>
           <div className='flex'>
-            <div className='bg-red border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
+            <div className='bg-wh border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
               {' '}
               P
             </div>
@@ -199,11 +201,11 @@ export default function RegisterBox({ onClose }) {
         </div>
 
         <div className=' '>
-          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]'>
+          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]  text-white'>
             Confirm Password
           </h1>
           <div className='flex'>
-            <div className='bg-red border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
+            <div className='bg-wh border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
               {' '}
               P
             </div>
@@ -237,11 +239,11 @@ export default function RegisterBox({ onClose }) {
 
         <div className='my-5 ml-5 '>
           <button
-            className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'
+            className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-gold text-[24px]'
             type='submit'
           >
             {' '}
-            Sign Up
+            SIGN IN
           </button>
         </div>
       </form>

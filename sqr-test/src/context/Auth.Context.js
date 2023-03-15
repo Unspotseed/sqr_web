@@ -14,6 +14,10 @@ export default function AuthContextProvider({ children }) {
 
   // const [selectRoom, setSelectRoom] = useState([]);
 
+  // for (let i = 0; (i = 10); i++) {
+  //   console.log('Infinite loop', i);
+  // }
+
   useEffect(() => {
     const fetchAuthUser = async () => {
       try {

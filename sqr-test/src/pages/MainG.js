@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import Card from '../features/auth/Card';
 export default function MainG() {
   return (
     <div>
@@ -21,17 +21,17 @@ export default function MainG() {
         </div>
 
         {/* apartment area */}
-        <div className='bg-blue grid justify-items-stretch  mb-14'>
-          <div className='flex justify-self-center justify-between w-11/12  bg-white'>
+        <div className=' grid justify-items-stretch  mb-14 mt-10'>
+          <div className='flex justify-self-center  justify-between w-10/12  '>
             {/* <div className='flex  '> */}
-            <div className='flex bg-red  '>
-              <h1 className='flex bg-green text-[30px] border-b-2'>
+            <div className='flex   '>
+              <h1 className='flex  text-[40px] border-b-4 font-Oswald font-semibold text-white pb-3'>
                 Apartment
               </h1>
             </div>
 
-            <div className='flex bg-green w-14'>
-              <button className='font-Oswald font-extrabold rounded-full h-6 w-14 bg-white text-[12px]'>
+            <div className='flex '>
+              <button className='font-Oswald font-extrabold rounded-full h-7 w-20 bg-white text-[16px]'>
                 SEE MORE
               </button>
             </div>
@@ -40,11 +40,11 @@ export default function MainG() {
         </div>
 
         {/* apartment card */}
-        <div className='bg-blue grid justify-items-stretch h-[325px]'>
+        <div className='grid justify-items-stretch h-[325px]'>
           <div className='flex justify-self-center justify-between w-11/12'>
             <Link to='/apartmentGuest'>
-              <div className='w-[240px] h-[300px] bg-green'>
-                <div className='h-[150px] block bg-black'>
+              <div className='w-[240px] h-[300px] bg-lig '>
+                <div className='h-[150px] block '>
                   <img
                     src='https://images.pexels.com/photos/1124461/pexels-photo-1124461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                     className='w-[240px] h-[150px]'
@@ -53,22 +53,22 @@ export default function MainG() {
                 </div>
 
                 <div className='ml-3'>
-                  <h1 className='text-center my-2 font-Oswald font-bold'>
+                  <h1 className='text-center my-2 font-Oswald font-bold text-white'>
                     The Mont Tower
                   </h1>
-                  <p className='font-Oswald font-semibold text-[12px]'>
+                  <p className='font-Oswald font-semibold text-[12px] text-white'>
                     Room: 2 Rooms 1 Bath
                   </p>
-                  <p className='font-Oswald font-semibold text-[12px]'>
+                  <p className='font-Oswald font-semibold text-[12px] text-white'>
                     Unit: 150 sqr
                   </p>
 
-                  <div className='flex mt-7 justify-between  bg-white'>
-                    <div className='font-Oswald font-semibold text-[16px]'>
+                  <div className='flex mt-7 justify-between  '>
+                    <div className='font-Oswald font-semibold text-[16px] text-white'>
                       Price: 3000 THB
                     </div>
-                    <div className='bg-red'>
-                      <button className='rounded-full w-[125px] h-[30px] bg-green font-Oswald text-[16px]'>
+                    <div className=''>
+                      <button className='ml-2 rounded-full w-[125px] h-[30px] bg-green2 font-Oswald text-[20px] font-Kenia  text-white'>
                         Request a tour
                       </button>
                     </div>
@@ -77,31 +77,10 @@ export default function MainG() {
               </div>
             </Link>
 
-            <div className='w-[240px] h-[300px] bg-green'>
-              <div className='bg-fixed h-[150px] block bg-black '>
-                {/* <img
-                  src='https://images.pexels.com/photos/1124461/pexels-photo-1124461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-                  alt='apartment'
-                /> */}
-              </div>
-
-              <div className=''>
-                <h1>The Mont Tower</h1>
-                <p>Room: 2 Rooms 1 Bath</p>
-                <p> Unit: 150 sqr</p>
-                <div className='flex'>
-                  <div className=''>Price: 3000 THB</div>
-                  <div>
-                    <button className='rounded-full bg-green'>
-                      Request a tour
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='w-[240px] h-[300px] bg-black'>me</div>
-            <div className='w-[240px] h-[300px] bg-white'>me</div>
-            <div className='w-[240px] h-[300px] bg-green'>me</div>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
       </div>

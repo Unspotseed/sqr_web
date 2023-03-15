@@ -13,20 +13,18 @@ export default function DropdownMonth({ opem }) {
   return (
     <>
       <div
-        className={`relative  bg-stone-600 top-[20px] right-[120px] ${
-          opem ? '' : 'hidden'
-        }`}
+        className={`relative  bg-stone-600 top-[20px]  ${opem ? '' : 'hidden'}`}
       >
         <div>
-          <div className='absolute flex '>
+          <div className='absolute flex text-xl '>
             {month.map(el => (
               <div key={el}>
-                <button
-                  className='bg-yellow-500 mr-2 w-5 '
+                <div
+                  className='bg-yellow-500 mr-2 w-5 hover:opacity-60'
                   onClick={() => handleClickSelectMonth(el)}
                 >
                   {el}
-                </button>
+                </div>
               </div>
             ))}
           </div>

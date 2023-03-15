@@ -14,12 +14,12 @@ export default function DropdownMenu({ open, onClose }) {
       </div> */}
       <div className='absolute  w-[150px] '>
         <Link to={'/orderStatus'} onClick={onClose}>
-          <div className='bg-orange-500 h-[40px] rounded flex justify-center'>
+          <div className='bg-gold hover:opacity-60 h-[40px] rounded flex justify-center'>
             <button className='font-Oswald'>Order status</button>
           </div>
         </Link>
         <div className='h-[5px]'></div>
-        <div className='bg-yellow-900 h-[40px] rounded  flex justify-center'>
+        <div className='bg-gold hover:opacity-60 h-[40px] rounded  flex justify-center'>
           <button onClick={logout} className='font-Oswald '>
             Logout
           </button>

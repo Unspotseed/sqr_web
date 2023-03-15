@@ -10,16 +10,16 @@ export default function Modal({ open, onClose, children, title }) {
       >
         <div
           onMouseDown={e => e.stopPropagation()}
-          className='flex bg-sky-700 w-[760px] h-auto  '
+          className='flex bg-blue2 w-[760px] h-auto  '
         >
-          <div className='bg-green grow'>
-            <div className='flex bg-red  '>
-              <h1 className='ml-28  bg-green border-b-2 font-Oswald font-bold text-[40px]'>
+          <div className=' grow'>
+            <div className='flex   '>
+              <h1 className='ml-28   border-b-4 pb-2 font-Oswald font-bold text-[40px]  text-white mt-4'>
                 {title}
               </h1>
             </div>
 
-            <div className='bg-orange-300 mt-8 ml-8'>{children}</div>
+            <div className=' mt-8 ml-8'>{children}</div>
           </div>
 
           <div className='bg-white grow-1 w-[260px] block '>

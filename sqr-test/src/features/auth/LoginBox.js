@@ -23,9 +23,11 @@ export default function LoginBox() {
     <>
       <form onSubmit={handleSubmitForm} className={'h-[400px]'}>
         <div>
-          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]'>Email</h1>
+          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]  text-white'>
+            Email
+          </h1>
           <div className='flex'>
-            <div className='bg-red border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
+            <div className='bg-wh border-4 border-zinc-900 h-[30px] w-[30px] text-center '>
               {' '}
               E
             </div>
@@ -44,11 +46,11 @@ export default function LoginBox() {
         </div>
 
         <div>
-          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]'>
+          <h1 className='mb-3 ml-3 font-Oswald font-bold text-[20px]  text-white'>
             Password
           </h1>
           <div className='flex'>
-            <div className='bg-red border-4 border-zinc-900 h-[30px] w-[30px] text-center'>
+            <div className='bg-wh border-4 border-zinc-900 h-[30px] w-[30px] text-center  '>
               {' '}
               P
             </div>
@@ -68,11 +70,11 @@ export default function LoginBox() {
 
         <div className='mt-12 ml-5 '>
           <button
-            className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-white text-[24px]'
+            className='font-Oswald font-extrabold rounded-full h-[40px] w-[125px] bg-gold text-[24px] hover:opacity-60'
             type='submit'
           >
             {' '}
-            Login
+            LOGIN
           </button>
         </div>
       </form>
